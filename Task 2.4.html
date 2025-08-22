@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<center></center>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color:tomato;
+        color: black;
+        padding: 20px;
+    }
+    /* Mobile-first styles */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        /* Spacing between form elements */
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    /* Desktop styles (using a media query) */
+    @media (min-width: 768px) {
+        form {
+            flex-direction: row;
+            /* Arrange elements horizontally */
+            flex-wrap: wrap;
+            /* Allow elements to wrap to the next line */
+            justify-content: space-between;
+            /* Distribute space evenly */
+        }
+    }
+</style>
+</center
+<body>
+    <center>
+        <h1 style="color: green;">
+            Task 2.4
+        </h1>
+        <h3>
+            Validate Input Fields in HTML Form
+        </h3>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" id="fname" placeholder="Enter your first name" required minlength="2">
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" id="lname" placeholder="Enter your last name" required minlength="2">
+                <br><br>
+                <label for="email">Email Id:</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Enter a secure password" required
+                    minlength="8">
+                <br><br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" name="phone" id="phone" placeholder="XXX-XXX-XXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    title="Format: 123-456-7890" required>
+                <br><br>
+                <h2 style="color: rgb(100, 0, 128);">
+                    <input type="submit" value="Submit">
+                </h2>
+        </form>
+    </center>
+</body>
+</html>

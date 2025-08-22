@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color:rgb(238, 170, 174);
+        color: #333;
+        padding: 20px;
+    }
+    /* Mobile-first styles */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        /* Spacing between form elements */
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    /* Desktop styles (using a media query) */
+    @media (min-width: 768px) {
+        form {
+            flex-direction: row;
+            /* Arrange elements horizontally */
+            flex-wrap: wrap;
+            /* Allow elements to wrap to the next line */
+            justify-content: space-between;
+            /* Distribute space evenly */
+        }
+
+        .form-group {
+            flex: 1 0 48%;
+            /* Adjust width for two columns, with some gap */
+            max-width: 48%;
+            /* Prevent excessive width */
+        }
+    }
+</style>
+
+</body>
+
+</html>
