@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 4.4</title>
+</head>
+
+<body>
+    <script>
+        function TimeRemaining() {
+            const now = new Date();
+            let lunchTime = new Date();
+            lunchTime.setHours(13, 0, 0, 0); // 1:00 PM (13:00)
+
+            if (now > lunchTime) { // If current time is past 1:00 PM
+                lunchTime.setDate(lunchTime.getDate() + 1);
+            }
+
+            const timeDifference = lunchTime.getTime() - now.getTime();//  the current time in milliseconds
+
+            const hours = Math.floor(timeDifference / (1000 * 60 * 60)); //   // Convert milliseconds to hours and minutes  
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+            const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;// uses a ternary operator to add a leading zero to the minutes
+
+            console.log(`Time remaining: ${hours}:${formattedMinutes}`);
+        }
+
+        TimeRemaining();// call the function to display the time
+
+    </script>
+</body>
+
+</html>

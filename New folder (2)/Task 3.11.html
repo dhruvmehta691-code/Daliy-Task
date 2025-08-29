@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK 3.11</title>
+</head>
+
+<body>
+    <script>
+        function finalDigit(...nums) {
+            // : Add all numbers
+            let sum = nums.reduce((a, b) => a + b, 0); 
+            //  multiplying digits until single digit remains
+            while (sum > 9) {
+                sum = sum.toString().split('').reduce((a, b) => a * b, 1);
+            }
+            return sum;
+        }
+        console.log(finalDigit(12));
+        console.log(finalDigit(9, 8, 7));    
+    </script>
+
+</body>
+
+</html>

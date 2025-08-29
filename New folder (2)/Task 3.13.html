@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function AsciiShort(str) {
+  return [...str].map(ch =>  // convert string to array
+    ch.charCodeAt(0) % 2 === 0 ? ch.toUpperCase() : ch.toLowerCase()//checks if ASCII value is even or odd
+  ).join('');
+}
+
+console.log(AsciiShort("THE LITTLE MERMAID"));
+</script>
+
+</body>
+</html>

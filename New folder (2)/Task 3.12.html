@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+   function findFactors(num) { //function to find factors of a number
+  let factors = []; //array to store factors
+  for (let i = 1; i <= num; i++) { //loop from 1 to the number
+    if (num % i === 0) { //check if i is a factor
+      factors.push(i); //add factor to the array
+    }
+  }
+  return factors;
+}
+console.log(findFactors(12));
+console.log(findFactors(100));  
+    </script>
+</body>
+</html>

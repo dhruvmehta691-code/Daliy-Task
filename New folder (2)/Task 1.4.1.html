@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exact Table Layout</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 600px;
+      height: 300px;
+    }
+    td {
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td rowspan="2"></td>   <!-- Tall left side -->
+      <td></td>               <!-- Small top-middle -->
+      <td rowspan="2"></td>   <!-- Tall right side -->
+    </tr>
+    <tr>
+      <td></td>               <!-- Small bottom-middle -->
+    </tr>
+    <tr>
+      <td colspan="2" rowspan="2"></td> <!-- Big bottom-left -->
+      <td></td>                        <!-- Top-right small -->
+    </tr>
+    <tr>
+      <td></td>                        <!-- Bottom-right small -->
+    </tr>
+  </table>
+</body>
+</html>

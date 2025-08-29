@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function highLow(str) {
+            let nums = str.split(" ").map(Number); // convert to numbers
+            let max = Math.max(...nums); // find max
+            let min = Math.min(...nums);// find min
+            return max + " " + min;  // return as string
+        }
+
+        console.log(highLow("1 2 3 4 5"));   
+        console.log(highLow("10 2 -3 7"));   
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; // proper height and centering
+            background: #f4f4f9;
+        }
+
+        #calc {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 260px;
+        }
+
+        #display {
+            width: 100%;
+            height: 50px;
+            text-align: right;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding-right: 10px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); //CSS Grid Layout to define the columns of a grid container.
+            gap: 10px;
+        }
+
+        button {
+            height: 50px;
+            font-size: 18px;
+            border-radius: 8px;
+            background: #e0e0e0;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #d6d6d6;
+        }
+
+        .equal {
+            background: #4CAF50;
+            color: white;
+            grid-column: span 2;
+        }
+
+        // for equal to
+        .clear {
+            background: #f44336;
+            color: white;
+        }
+
+        .back {
+            background: #ff9800;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="calc">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button class="clear" onclick="clr()">C</button>
+            <button class="back" onclick="backspace()">←</button>
+            <button onclick="appendDisplay('/')">/</button> //appends the current value to the display
+            <button onclick="appendDisplay('*')">*</button>
+
+            <button onclick="appendDisplay('7')">7</button>
+            <button onclick="appendDisplay('8')">8</button>
+            <button onclick="appendDisplay('9')">9</button>
+            <button onclick="appendDisplay('-')">-</button>
+
+            <button onclick="appendDisplay('4')">4</button>
+            <button onclick="appendDisplay('5')">5</button>
+            <button onclick="appendDisplay('6')">6</button>
+            <button onclick="appendDisplay('+')">+</button>
+
+            <button onclick="appendDisplay('1')">1</button>
+            <button onclick="appendDisplay('2')">2</button>
+            <button onclick="appendDisplay('3')">3</button>
+            <button onclick="appendDisplay('.')">.</button>
+
+            <button onclick="appendDisplay('0')">0</button>
+            <button class="equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById("display");
+
+        function appendDisplay(val) { 
+            display.value += val;
+        }
+        function clr() {
+            display.value = ""; //clears the display
+        }
+        function backspace() {
+            display.value = display.value.slice(0, -1); //removes the last character from the display
+        }
+        function calculate() {
+            try {
+                display.value = eval(display.value); //successfully evaluates the expression
+            } catch {
+                display.value = "Error";
+            }
+        }
+    </script>
+</body>
+
+</html>
